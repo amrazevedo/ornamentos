@@ -1,0 +1,85 @@
+{
+  "name": "openscad-playground",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "homepage": "https://ochafik.com/openscad2/",
+  "dependencies": {
+    "@gltf-transform/core": "4.5.1",
+    "@gltf-transform/extensions": "4.5.1",
+    "@modelcontextprotocol/client": "^2.0.0",
+    "@modelcontextprotocol/ext-apps": "^2.1.0",
+    "@monaco-editor/loader": "^1.4.0",
+    "@monaco-editor/react": "^4.6.0",
+    "blurhash": "^2.0.5",
+    "chroma-js": "^3.1.2",
+    "debug": "^4.4.0",
+    "jszip": "^3.10.1",
+    "monaco-editor": "^0.57.0",
+    "primeflex": "^4.0.0",
+    "primeicons": "^7.0.0",
+    "primereact": "^10.8.5",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "thumbhash": "^0.1.1",
+    "uuid": "^14.0.1",
+    "uzip": "^0.20201231.0",
+    "zod": "^4.2.0"
+  },
+  "scripts": {
+    "test:e2e": "jest",
+    "start:development": "npx webpack serve --mode=development",
+    "start:production": "NODE_ENV=production PUBLIC_URL=http://localhost:3000/dist/ npm run build && npx serve",
+    "start:test": "npm run start:development",
+    "start": "npm run start:development",
+    "build": "NODE_ENV=production webpack --mode=production",
+    "build:libs": "LIBS_BUILD_MODE=all webpack --config webpack.libs.config.js",
+    "build:libs:clean": "LIBS_BUILD_MODE=clean webpack --config webpack.libs.config.js",
+    "build:libs:wasm": "LIBS_BUILD_MODE=wasm webpack --config webpack.libs.config.js",
+    "build:libs:fonts": "LIBS_BUILD_MODE=fonts webpack --config webpack.libs.config.js",
+    "build:wasm-fallback": "./scripts/build-wasm-fallback.sh",
+    "libs:update": "node scripts/update-libs-commits.mjs",
+    "libs:check": "node scripts/update-libs-commits.mjs --check",
+    "libs:test": "node scripts/test-libs-render.mjs",
+    "build:all": "npm run build:libs && npm run build"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@types/chroma-js": "^3.1.2",
+    "@types/debug": "^4.1.12",
+    "@types/filesystem": "^0.0.36",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^26.1.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@types/uzip": "^0.20201231.2",
+    "@types/web": "^0.0.359",
+    "copy-webpack-plugin": "^14.0.0",
+    "css-loader": "^7.1.2",
+    "jest": "^30.5.2",
+    "jest-puppeteer": "^11.0.0",
+    "puppeteer": "^25.3.0",
+    "serve": "^14.2.4",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.9.2",
+    "webpack": "^5.108.4",
+    "webpack-cli": "^7.2.1",
+    "webpack-dev-server": "^6.0.0",
+    "workbox-webpack-plugin": "^7.3.0"
+  }
+}

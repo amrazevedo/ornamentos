@@ -1,0 +1,12 @@
+node_modules
+libs
+dist
+public/libraries
+public/openscad.js
+public/openscad.wasm
+src/wasm
+.DS_Store
+.vercel
+.env*.local
+*.log
+public/openscad.fallback.js
